@@ -1,0 +1,18 @@
+
+CREATE TABLE Categoria(Id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, Nombre NVARCHAR2(100));
+CREATE TABLE Incidencia(Id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, Titulo NVARCHAR2(200),Descripcion CLOB,CategoriaId NUMBER,Severidad NVARCHAR2(50),Estado NVARCHAR2(50),FechaRegistro DATE DEFAULT SYSDATE);
+CREATE TABLE BitacoraIncidencia(Id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,IncidenciaId NUMBER,Usuario NVARCHAR2(100),FechaHora DATE DEFAULT SYSDATE,EstadoAnterior NVARCHAR2(50),EstadoNuevo NVARCHAR2(50),Comentario CLOB,Accion NVARCHAR2(200));
+
+CREATE OR REPLACE PROCEDURE sp_RegistrarIncidencia(
+ pTitulo IN NVARCHAR2,
+ pDescripcion IN CLOB,
+ pCategoriaId IN NUMBER,
+ pSeveridad IN NVARCHAR2,
+ P_RESULT OUT NUMBER
+) AS
+BEGIN
+  INSERT INTO Incidencia(Titulo,Descripcion,CategoriaId,Severidad,Estado)
+  VALUES(pTitulo,pDescripcion,pCategoriaId,pSeveridad,'Pendiente')
+  RETURNING Id INTO P_RESULT;
+END;
+/

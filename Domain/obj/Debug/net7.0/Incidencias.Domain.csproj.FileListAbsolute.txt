@@ -1,0 +1,4 @@
+C:\Users\jonathan.giron\Documents\IncidenciasOracle\Domain\obj\Debug\net7.0\Incidencias.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonathan.giron\Documents\IncidenciasOracle\Domain\obj\Debug\net7.0\Incidencias.Domain.AssemblyInfoInputs.cache
+C:\Users\jonathan.giron\Documents\IncidenciasOracle\Domain\obj\Debug\net7.0\Incidencias.Domain.AssemblyInfo.cs
+C:\Users\jonathan.giron\Documents\IncidenciasOracle\Domain\obj\Debug\net7.0\Incidencias.Domain.csproj.CoreCompileInputs.cache
